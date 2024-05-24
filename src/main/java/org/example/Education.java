@@ -2,7 +2,7 @@ package org.example;
 
 public class Education {
 
-    Integer graduationYear;
+    int graduationYear;
     String schoolName;
     String major;
     String graduationStatus;
@@ -39,17 +39,23 @@ public class Education {
         this.graduationStatus = graduationStatus;
     }
 
-    public Education(Integer graduationYear, String schoolName, String major, String graduationStatus) {
+    public Education(String graduationStatus, int graduationYear, String schoolName, String major) {
         this.graduationYear = graduationYear;
         this.schoolName = schoolName;
         this.major = major;
         this.graduationStatus = graduationStatus;
     }
-    public  Education(){
-        this.graduationYear = graduationYear;
-        this.schoolName = schoolName;
-        this.major = major;
-        this.graduationStatus = graduationStatus;
+   public Education(){
 
+    }
+
+    @Override
+    public String toString() {
+        return "Education{" +
+                "graduationYear=" + graduationYear +
+                ", schoolName='" + schoolName + '\'' +
+                ", major='" + major + '\'' +
+                ", graduationStatus='" + graduationStatus + '\'' +
+                '}';
     }
 }

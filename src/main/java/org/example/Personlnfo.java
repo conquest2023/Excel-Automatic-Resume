@@ -2,11 +2,11 @@ package org.example;
 
 public class Personlnfo {
 
-    String photo;
-    String name;
-    String email;
-    String address;
-    int phoneNumber;
+   private String photo;
+   private   String name;
+    private String email;
+    private String address;
+    private int phoneNumber;
 
     int birthDate;
 
@@ -58,7 +58,7 @@ public class Personlnfo {
         this.phoneNumber = phoneNumber;
     }
 
-    public Personlnfo(String photo, String name, String email, String address, int phoneNumber,int birthDate) {
+    public  Personlnfo(String photo, String name, String email, String address, int phoneNumber,int birthDate) {
         this.birthDate=birthDate;
         this.photo = photo;
         this.name = name;
@@ -66,13 +66,19 @@ public class Personlnfo {
         this.address = address;
         this.phoneNumber = phoneNumber;
     }
-    public  Personlnfo(){
-        this.birthDate=birthDate;
-        this.photo = photo;
-        this.name = name;
-        this.email = email;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
+    @Override
+    public  String toString() {
+        return "Personlnfo {" +
+                "photo='" + photo + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", birthDate=" + birthDate +
+                '}';
+    }
+    Personlnfo(){
 
     }
 }
+

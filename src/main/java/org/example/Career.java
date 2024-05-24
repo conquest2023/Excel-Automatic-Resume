@@ -45,11 +45,17 @@ public class Career {
         this.companyName = companyName;
         this.employmentYears = employmentYears;
     }
-    public  Career(){
-        this.jobtitle = jobtitle;
-        this.workPeriod = workPeriod;
-        this.companyName = companyName;
-        this.employmentYears = employmentYears;
+    Career(){
 
+    }
+
+    @Override
+    public String toString() {
+        return "Career{" +
+                "jobtitle='" + jobtitle + '\'' +
+                ", workPeriod=" + workPeriod +
+                ", companyName='" + companyName + '\'' +
+                ", employmentYears=" + employmentYears +
+                '}';
     }
 }
