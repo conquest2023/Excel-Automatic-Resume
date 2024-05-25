@@ -2,16 +2,16 @@ package org.example;
 
 public class Education {
 
-    int graduationYear;
+   String graduationYear;
     String schoolName;
     String major;
     String graduationStatus;
 
-    public Integer getGraduationYear() {
+    public String getGraduationYear() {
         return graduationYear;
     }
 
-    public void setGraduationYear(Integer graduationYear) {
+    public void setGraduationYear(String graduationYear) {
         this.graduationYear = graduationYear;
     }
 
@@ -39,7 +39,7 @@ public class Education {
         this.graduationStatus = graduationStatus;
     }
 
-    public Education(String graduationStatus, int graduationYear, String schoolName, String major) {
+    public Education(String graduationStatus, String graduationYear, String schoolName, String major) {
         this.graduationYear = graduationYear;
         this.schoolName = schoolName;
         this.major = major;

@@ -1,25 +1,26 @@
 package org.example;
 
 public class Career {
-    String jobtitle;
-    Integer workPeriod;
+     String duties;
+
+    String workPeriod;
     String companyName;
 
-    Integer employmentYears;
+     String employmentYears;
 
-    public String getJobtitle() {
-        return jobtitle;
+    public String getDuties() {
+        return duties;
     }
 
-    public void setJobtitle(String jobtitle) {
-        this.jobtitle = jobtitle;
+    public void setDuties(String duties) {
+        this.duties = duties;
     }
 
-    public Integer getWorkPeriod() {
+    public String getWorkPeriod() {
         return workPeriod;
     }
 
-    public void setWorkPeriod(Integer workPeriod) {
+    public void setWorkPeriod(String workPeriod) {
         this.workPeriod = workPeriod;
     }
 
@@ -31,16 +32,16 @@ public class Career {
         this.companyName = companyName;
     }
 
-    public Integer getEmploymentYears() {
+    public String getEmploymentYears() {
         return employmentYears;
     }
 
-    public void setEmploymentYears(Integer employmentYears) {
+    public void setEmploymentYears(String employmentYears) {
         this.employmentYears = employmentYears;
     }
 
-    public Career(String jobtitle, Integer workPeriod, String companyName, Integer employmentYears) {
-        this.jobtitle = jobtitle;
+    public Career(String employmentYears,String companyName ,String jobtitle, String workPeriod) {
+        this.duties = jobtitle;
         this.workPeriod = workPeriod;
         this.companyName = companyName;
         this.employmentYears = employmentYears;
@@ -52,7 +53,7 @@ public class Career {
     @Override
     public String toString() {
         return "Career{" +
-                "jobtitle='" + jobtitle + '\'' +
+                "jobtitle='" + duties + '\'' +
                 ", workPeriod=" + workPeriod +
                 ", companyName='" + companyName + '\'' +
                 ", employmentYears=" + employmentYears +

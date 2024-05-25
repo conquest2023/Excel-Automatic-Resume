@@ -8,6 +8,7 @@ public class Personlnfo {
     private String address;
     private int phoneNumber;
 
+
     int birthDate;
 
     public int getBirthDate() {

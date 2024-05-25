@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class ResumeView {
 
     public Personlnfo inputPersonInfo() {
+
         Scanner sc = new Scanner(System.in);
         System.out.print("사진 파일명을 입력하세요:");
         String photo = sc.nextLine();
@@ -20,8 +21,9 @@ public class ResumeView {
         int phoneNumber = sc.nextInt();
         System.out.print("생일을 입력하세요");
         int birthDate = sc.nextInt();
-        return new Personlnfo(photo, name, email, address, phoneNumber, birthDate);
 
+
+        return    new Personlnfo(photo, name, email, address, phoneNumber, birthDate);
     }
 
     public List<Education> inputEducationList() {
@@ -29,14 +31,20 @@ public class ResumeView {
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("학력 정보를 입력하세요 (종료는 q):");
-            String graduationStatus = sc.nextLine();
-            if (graduationStatus.equals("q")) {
+            System.out.println("졸업년도  " + "학교명  " + "전공  " + "졸업여부  ");
+            String input= sc.nextLine();
+            if (input.equals("q")) {
                 break;
             }
-            System.out.println("졸업년도  " + "학교명  " + "전공  " + "졸업여부  ");
-            int graduationYear = sc.nextInt();
-            String major = sc.nextLine();
-            String schoolName = sc.nextLine();
+            String[] tokens=input.split("");
+            if(tokens.length!=4){
+                System.out.println("잘못된 입력입니다.");
+                continue;
+            }
+            String graduationYear=tokens[0];
+            String schoolName=tokens[1];
+            String major=tokens[2];
+            String graduationStatus=tokens[3];
             Education education = new Education(graduationStatus, graduationYear, major, schoolName);
             educations.add(education);
         }
@@ -47,15 +55,21 @@ public class ResumeView {
             Scanner sc = new Scanner(System.in);
             while (true) {
                 System.out.println("경력 정보를 입력하세요 (종료는 q)");
-                String companyName = sc.nextLine();
-                if (companyName.equals("q")) {
+                System.out.println("근무기간 " + "근무처 " + "담당업무  " + "근속연수");
+                String input=sc.nextLine();
+                if (input.equalsIgnoreCase("q")) {
                     break;
                 }
-                System.out.println("근무기간  " + "근무처  " + "담당업무  " + "근속연수  ");
-                int employmentYears = sc.nextInt();
-                String jobtitle = sc.nextLine();
-                int workPeriod = sc.nextInt();
-                Career career = new Career(companyName, employmentYears, jobtitle, workPeriod);
+                String[] tokens=input.split("");
+                if(tokens.length!=4){
+                    System.out.println("잘못된 입력입니다.");
+                    continue;
+                }
+                String employmentYears =tokens[0];
+                String companyName = tokens[1];
+                String jobtitle = tokens[2];
+                String workPeriod = tokens[3];
+                Career career = new Career(employmentYears,companyName, jobtitle, workPeriod);
                 careers.add(career);
             }
             return careers;
@@ -63,12 +77,15 @@ public class ResumeView {
 
     public String inputSelfIntroduciton() {
 
-        Scanner sc = new Scanner(System.in);
         System.out.println("자기소개를 입력하세요.여러 줄을 입력하려면 빈 줄을 입력하세요.");
-        String SelfIntroduction = sc.next();
-
+        Scanner scanner=new Scanner(System.in);
+        StringBuilder sb=new StringBuilder();
+        String line;
+        while ((line=scanner.nextLine()).trim().length()>0){
+            sb.append(line).append("\n");
+        }
         System.out.println("이력서가 완성되었습니다.");
-        return SelfIntroduction;
+        return sb.toString().trim();
     }
 
 
